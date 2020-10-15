@@ -13,13 +13,13 @@ export const EmployeeProvider = (props) => {
     const [employees, setEmployees] = useState([])
 
     const getEmployees = () => {
-        return fetch("http://localhost:8088/employees")
+        return fetch("http://localhost:3000/employees")
             .then(res => res.json())
             .then(setEmployees)
     }
 
     const addEmployee = employee => {
-        return fetch("http://localhost:8088/employees", {
+        return fetch("http://localhost:3000/employees", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
