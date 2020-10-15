@@ -11,12 +11,12 @@ export const AnimalList = ({ history }) => {
     // Initialization effect hook -> Go get animal data
     useEffect(() => {
         getAnimals()
-    }, [])
+    }, [getAnimals])
 
     useEffect(() => {
         const matchingAnimals = animals.filter(animal => animal.name.toLowerCase().includes(searchTerms.toLowerCase()))
         setFiltered(matchingAnimals)
-    }, [searchTerms])
+    }, [animals, searchTerms])
 
 
     useEffect(() => {

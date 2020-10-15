@@ -12,7 +12,7 @@ export const LocationList = () => {
 
     useEffect(() => {
         getLocations().then(getEmployees).then(getAnimals)
-    }, [])
+    }, [getAnimals, getEmployees, getLocations])
 
     return (
         <div style={{ margin: "0rem 3rem" }}>

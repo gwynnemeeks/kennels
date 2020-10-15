@@ -5,10 +5,10 @@ import "./Employees.css"
 
 export const EmployeeList = props => {
     const { employees, getEmployees } = useContext(EmployeeContext)
-
+// eslint-disable-next-line
     useEffect(() => {
         getEmployees()
-    }, [])
+    }, [getEmployees])
 
     return (
         <div style={{ margin: "0rem 3rem"}}>

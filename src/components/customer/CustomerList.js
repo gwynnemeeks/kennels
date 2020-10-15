@@ -6,10 +6,10 @@ import "./Customers.css"
 export const CustomerList = () => {
     const { customers, getCustomers } = useContext(CustomerContext)
     const { animals, getAnimals } = useContext(AnimalContext)
-
-    useEffect(() => {
+// eslint-disable-next-line
+    useEffect(() => {// eslint-disable-next-line
         getCustomers().then(getAnimals)
-    }, [])
+    }, [getAnimals, getCustomers])
 
     return (
         <div style={{ margin: "0rem 3rem"}}>

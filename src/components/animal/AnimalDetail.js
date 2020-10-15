@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useState } from "react"
 import { AnimalContext } from "./AnimalProvider"
 import "./Animals.css"
@@ -7,7 +8,7 @@ export const AnimalDetails = (props) => {
 
     const [animal, setAnimal] = useState({ location: {}, customer: {} })
 
-    useEffect(() => {
+    useEffect(() => {// eslint-disable-next-line
         const animalId = parseInt(props.match.params.animalId)
         getAnimalById(animalId)
             .then(setAnimal)
@@ -19,7 +20,7 @@ export const AnimalDetails = (props) => {
             <div className="animal__breed">{animal.breed}</div>
             <div className="animal__location">Location: {animal.location.name}</div>
             <div className="animal__owner">Customer: {animal.customer.name}</div>
-            <div className="animal__treatment">Treatment: {animal.treatment}</div>
+            <div className="animal__treatment">Treatment: {animal.status}</div>
 
             <button onClick={() => releaseAnimal(animal.id).then(() => props.history.push("/animals"))} >Release Animal</button>
 
