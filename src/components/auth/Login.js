@@ -10,7 +10,7 @@ export const Login = props => {
     const passwordDialog = useRef()
 
     const existingUserCheck = () => {
-        return fetch(`http://localhost:3000/customers?email=${email.current.value}`)
+        return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
             .then(_ => _.json())
             .then(user => user.length ? user[0] : false)
     }

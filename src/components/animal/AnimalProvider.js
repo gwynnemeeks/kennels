@@ -7,18 +7,18 @@ export const AnimalProvider = (props) => {
     const [searchTerms, setTerms] = useState("")
 
     const getAnimals = () => {
-        return fetch("http://localhost:3000/animals")
+        return fetch("http://localhost:8088/animals")
             .then(res => res.json())
             .then(setAnimals)
     }
 
     const getAnimalById = (id) => {
-        return fetch(`http://localhost:3000/animals/${id}`)
+        return fetch(`http://localhost:8088/animals/${id}`)
             .then(res => res.json())
     }
 
     const addAnimal = animal => {
-        return fetch("http://localhost:3000/animals", {
+        return fetch("http://localhost:8088/animals", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -29,7 +29,7 @@ export const AnimalProvider = (props) => {
     }
 
     const updateAnimal = animal => {
-        return fetch(`http://localhost:3000/animals/${animal.id}`, {
+        return fetch(`http://localhost:8088/animals/${animal.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -40,7 +40,7 @@ export const AnimalProvider = (props) => {
     }
 
     const releaseAnimal = (animalId) => {
-        return fetch(`http://localhost:3000/animals/${animalId}`, {
+        return fetch(`http://localhost:8088/animals/${animalId}`, {
             method: "DELETE"
         })
             .then(getAnimals)
